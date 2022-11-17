@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body class="bg-red-500">
+<body class="bg-white">
     <div class="imageSlider w-[100%] h-auto flex flex-col items-center">
-        <h1 class="font-mono text-3xl font-bold mt-5 mb-2 text-center">Image Slider</h1>
+        <h1 class="font-serif text-[#252524] text-3xl font-bold mt-5 mb-2 text-center">Images Slider With Carousal</h1>
         <div class="navigation flex flex-row mt-3 flex-wrap items-center justify-center mb-2">
-            <button id="left" type="button" title="Left" class=" px-4 py-2 rounded-md hover:bg-red-400 hover:shadow-xl font-serif text-2xl mx-3 my-3 transition-shadow">←</button>
-            <button id="right" type="button" title="Right" class=" px-4 py-2 rounded-md hover:bg-red-400 hover:shadow-xl font-serif text-2xl mx-3 my-3 transition-shadow">→</button>
+            <button id="left" type="button" title="Left" class=" px-4 py-2 rounded-md hover:bg-gray-400 hover:shadow-sm font-serif text-2xl mx-3 my-3 transition-shadow">←</button>
+            <button id="right" type="button" title="Right" class=" px-4 py-2 rounded-md hover:bg-gray-400 hover:shadow-sm font-serif text-2xl mx-3 my-3 transition-shadow">→</button>
         </div>
-        <div id="images" class="flex flex-row items-center justify-center mt-48">
-            <img src="./Images/1.jpg" alt="Images" class="img w-[90%] h-[400px] max-w-full absolute shadow-xl z-10 object-fill transition-shadow">
-            <img src="./Images/2.jpg" alt="Images" class="img w-[90%] h-[400px] max-w-full absolute shadow-xl object-fill transition-shadow">
-            <img src="./Images/3.jpg" alt="Images" class="img w-[90%] h-[400px] max-w-full absolute shadow-xl object-fill transition-shadow">
-            <img src="./Images/4.jpg" alt="Images" class="img w-[90%] h-[400px] max-w-full absolute shadow-xl object-fill transition-shadow">
-            <img src="./Images/5.jpg" alt="Images" class="img w-[90%] h-[400px] max-w-full absolute shadow-xl object-fill transition-shadow">
+        <div id="images" class="flex flex-row items-center justify-center mt-56 md:mt-52 ">
+            <img src="./Images/1.jpg" alt="Images" class="img w-[90%] md:w-[70%] h-[400px] max-w-full absolute shadow-sm z-10 object-fill transition-shadow">
+            <img src="./Images/2.jpg" alt="Images" class="img w-[90%] md:w-[70%] h-[400px] max-w-full absolute shadow-sm object-fill transition-shadow">
+            <img src="./Images/3.jpg" alt="Images" class="img w-[90%] md:w-[70%] h-[400px] max-w-full absolute shadow-sm object-fill transition-shadow">
+            <img src="./Images/4.jpg" alt="Images" class="img w-[90%] md:w-[70%] h-[400px] max-w-full absolute shadow-sm object-fill transition-shadow">
+            <img src="./Images/5.jpg" alt="Images" class="img w-[90%] md:w-[70%] h-[400px] max-w-full absolute shadow-sm object-fill transition-shadow">
         </div>
     </div>
     <script>
@@ -32,14 +31,14 @@
             if ( i === images.length - 2 ){
                 right.disabled = true;
                 right.classList.add("text-gray-400");
-                right.classList.remove("hover:bg-red-400")
-                right.classList.remove("hover:shadow-xl")
+                right.classList.remove("hover:bg-gray-400")
+                right.classList.remove("hover:shadow-sm")
             }
             else{
                 left.disabled = false;
                 left.classList.remove("text-gray-400");
-                left.classList.add("hover:bg-red-400")
-                left.classList.add("hover:shadow-xl")
+                left.classList.add("hover:bg-gray-400")
+                left.classList.add("hover:shadow-sm")
             }
             images[i].classList.remove("z-10");
             images[i+1].classList.add("z-10");
@@ -49,15 +48,15 @@
         if (i === images.length - images.length){
                 left.disabled = true;
                 left.classList.add("text-gray-400");
-                left.classList.remove("hover:bg-red-400")
-                left.classList.remove("hover:shadow-xl")
+                left.classList.remove("hover:bg-gray-400")
+                left.classList.remove("hover:shadow-sm")
         }
         left.addEventListener("click", () => {
             if ( i <= images.length - 1){
                 right.disabled = false;
                 right.classList.remove("text-gray-400");
-                right.classList.add("hover:bg-red-400")
-                right.classList.add("hover:shadow-xl")
+                right.classList.add("hover:bg-gray-400")
+                right.classList.add("hover:shadow-sm")
                 images[i].classList.remove("z-10");
                 images[i-1].classList.add("z-10");
                 images[i-1].style.transition = `all 1s ease-in-out`;
@@ -66,8 +65,8 @@
             if (i === images.length - images.length){
                 left.disabled = true;
                 left.classList.add("text-gray-400");
-                left.classList.remove("hover:bg-red-400")
-                left.classList.remove("hover:shadow-xl")
+                left.classList.remove("hover:bg-gray-400")
+                left.classList.remove("hover:shadow-sm")
             }
         })
     </script>
