@@ -1,2 +1,3 @@
 # Image-Slider-JS
-Can See here : https://image-slider-btn.netlify.app/
+
+Can See here : <https://carousals.netlify.app/>
